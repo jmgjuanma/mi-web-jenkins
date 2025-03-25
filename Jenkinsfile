@@ -4,7 +4,7 @@ pipeline {
         // Etapa 1: Descargar el código
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/tu-usuario/mi-web-jenkins.git'
+                git branch: 'main', url: 'https://github.com/jmgjuanma/mi-web-jenkins.git'
             }
         }
         // Etapa 2: Validar HTML (ejemplo simple)
