@@ -25,7 +25,7 @@ pipeline {
                 steps {
                     sh '''
                         docker run -d --name web -v $(pwd):/usr/share/nginx/html -p 8081:80 nginx
-                        echo "✅ Página desplegada en http://<tu-ip>:8081"
+                        echo "✅ Página desplegada en http://localhost:8081"
                     '''
                 }
             }
