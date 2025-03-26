@@ -21,11 +21,13 @@ pipeline {
             }
         }
         // Etapa 3: Simular despliegue
-        stage('Deploy') {
-            steps {
-                sh 'echo "🎉 Se desplegaría en un servidor real (ej: Nginx)"'
-                // En un caso real, aquí iría un comando como:
-                // scp -r * user@server:/var/www/html/
+            stage('Deploy') {
+                steps {
+                    sh '''
+                        docker run -d --name web -v $(pwd):/usr/share/nginx/html -p 8081:80 nginx
+                        echo "✅ Página desplegada en http://<tu-ip>:8081"
+                    '''
+                }
             }
         }
     }
