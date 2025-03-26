@@ -23,10 +23,9 @@ pipeline {
         // Etapa 3: Simular despliegue
             stage('Deploy') {
                 steps {
-                    sh '''
-                        docker run -d --name web -v $(pwd):/usr/share/nginx/html -p 8081:80 nginx
-                        echo "✅ Página desplegada en http://localhost:8081"
-                    '''
+                sh 'echo "Desplegando en servidor..."'
+                sh 'cp -r * /var/www/html/'  // Simula copiar a Apache/Nginx
+                    }
                 }
             }
         }
