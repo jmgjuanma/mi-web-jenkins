@@ -23,9 +23,7 @@ pipeline {
         // Etapa 3: Simular despliegue
             stage('Deploy') {
                 steps {
-                sh 'echo "Desplegando en servidor..."'
-                sh 'cp -r * /var/www/html/'  // Simula copiar a Apache/Nginx
-                    }
+                sh 'echo "🎉 Se desplegaría en un servidor real (ej: Nginx)"'
                 }
             }
         }
